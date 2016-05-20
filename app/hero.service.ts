@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -21,7 +21,7 @@ export class HeroService{
     
     getHero(id: number) {
         return this.getHeroes()
-                .then(heroes => heroes.filter(hero => hero.id === id)[0];
+                .then(heroes => heroes.filter(hero => hero.id === id)[0]
             
         );
     }
@@ -77,7 +77,7 @@ export class HeroService{
 
 
     
-    private handleErrir(error any) {
+    private handleError(error: any) {
         console.error('An error occurred', error);
         return Promise.reject(error.message || error);
     }
